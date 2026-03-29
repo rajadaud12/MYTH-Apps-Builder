@@ -210,7 +210,7 @@ class _UserProfileScreenState extends State<UserProfileScreen> with SingleTicker
                   style: ElevatedButton.styleFrom(
                     backgroundColor: _isFollowing ? AppColors.cardBackground : AppColors.primary,
                     foregroundColor: _isFollowing ? AppColors.primary : AppColors.white,
-                    elevation: _isFollowing ? 0 : 0,
+                    elevation: 0,
                     padding: const EdgeInsets.symmetric(vertical: 12),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(25),
@@ -291,7 +291,7 @@ class _UserProfileScreenState extends State<UserProfileScreen> with SingleTicker
             children: [
               if (post['image'] != null)
                 Image.network(
-                  post['image'],
+                  post['image'] as String,
                   fit: BoxFit.cover,
                 )
               else
@@ -415,7 +415,7 @@ class _UserProfileScreenState extends State<UserProfileScreen> with SingleTicker
                         children: [
                           CircleAvatar(
                             radius: 22,
-                            backgroundImage: NetworkImage(post['avatar']),
+                            backgroundImage: NetworkImage(post['avatar'] as String),
                           ),
                           const SizedBox(width: 12),
                           Expanded(
@@ -444,7 +444,7 @@ class _UserProfileScreenState extends State<UserProfileScreen> with SingleTicker
                       ),
                       const SizedBox(height: 16),
                       Text(
-                        post['content'],
+                        post['content'] as String,
                         style: TextStyle(
                           fontSize: 16,
                           color: AppColors.textPrimary,
@@ -456,7 +456,7 @@ class _UserProfileScreenState extends State<UserProfileScreen> with SingleTicker
                         ClipRRect(
                           borderRadius: BorderRadius.circular(12),
                           child: Image.network(
-                            post['image'],
+                            post['image'] as String,
                             width: double.infinity,
                             fit: BoxFit.cover,
                           ),
@@ -484,7 +484,7 @@ class _UserProfileScreenState extends State<UserProfileScreen> with SingleTicker
                                 context,
                                 MaterialPageRoute(
                                   builder: (context) => CommentsScreen(
-                                    postId: post['id'],
+                                    postId: post['id'] as int,
                                     username: widget.username,
                                   ),
                                 ),
