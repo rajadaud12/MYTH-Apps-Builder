@@ -1,21 +1,27 @@
-name: MYTH Build System
+name: Flutter Build & Deploy
 
 on:
-  push:
-    branches: [main, 'project-*']
   workflow_dispatch:
     inputs:
       build_type:
-        description: "apk or web"
+        description: 'Build target (web or apk)'
         required: true
-        default: "apk"
+        default: 'web'
+
+# Sequential deployment to gh-pages prevents Git lock errors (cannot lock ref)
+concurrency:
+  group: pages-deploy-${{ github.ref_name }} # Narrower group per-branch for parallel builds
+  cancel-in-progress: false
 
 permissions:
   contents: write
+  pages: write
+  id-token: write
 
 jobs:
   build:
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
 
