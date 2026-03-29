@@ -102,7 +102,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                       borderRadius: BorderRadius.circular(12),
                     ),
-                    child: const Icon(
+                    child: Icon(
                       Icons.connect_without_contact_rounded,
                       color: AppColors.white,
                       size: 24,
@@ -178,8 +178,8 @@ class _HomeScreenState extends State<HomeScreen> {
                   context,
                   MaterialPageRoute(
                     builder: (context) => UserProfileScreen(
-                      username: story['username'],
-                      avatar: story['avatar'],
+                      username: story['username'] as String,
+                      avatar: story['avatar'] as String,
                     ),
                   ),
                 );
@@ -213,7 +213,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         children: [
                           CircleAvatar(
                             radius: 23,
-                            backgroundImage: NetworkImage(story['avatar']),
+                            backgroundImage: NetworkImage(story['avatar'] as String),
                             backgroundColor: AppColors.divider,
                           ),
                           if (story['isAdd'])
@@ -240,7 +240,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                   const SizedBox(height: 6),
                   Text(
-                    story['isAdd'] ? 'Your Story' : story['username'].toString().split('_').first,
+                    story['isAdd'] ? 'Your Story' : (story['username'] as String).split('_').first,
                     style: TextStyle(
                       fontSize: 11,
                       color: AppColors.textSecondary,
@@ -276,15 +276,15 @@ class _HomeScreenState extends State<HomeScreen> {
                       context,
                       MaterialPageRoute(
                         builder: (context) => UserProfileScreen(
-                          username: post['username'],
-                          avatar: post['avatar'],
+                          username: post['username'] as String,
+                          avatar: post['avatar'] as String,
                         ),
                       ),
                     );
                   },
                   child: CircleAvatar(
                     radius: 22,
-                    backgroundImage: NetworkImage(post['avatar']),
+                    backgroundImage: NetworkImage(post['avatar'] as String),
                     backgroundColor: AppColors.divider,
                   ),
                 ),
@@ -299,14 +299,14 @@ class _HomeScreenState extends State<HomeScreen> {
                             context,
                             MaterialPageRoute(
                               builder: (context) => UserProfileScreen(
-                                username: post['username'],
-                                avatar: post['avatar'],
+                                username: post['username'] as String,
+                                avatar: post['avatar'] as String,
                               ),
                             ),
                           );
                         },
                         child: Text(
-                          post['name'],
+                          post['name'] as String,
                           style: TextStyle(
                             fontSize: 15,
                             fontWeight: FontWeight.w600,
@@ -337,7 +337,7 @@ class _HomeScreenState extends State<HomeScreen> {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 16),
             child: Text(
-              post['content'],
+              post['content'] as String,
               style: TextStyle(
                 fontSize: 15,
                 color: AppColors.textPrimary,
@@ -353,7 +353,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 color: AppColors.divider,
               ),
               child: Image.network(
-                post['image'],
+                post['image'] as String,
                 fit: BoxFit.cover,
                 width: double.infinity,
                 loadingBuilder: (context, child, loadingProgress) {
@@ -394,8 +394,8 @@ class _HomeScreenState extends State<HomeScreen> {
                       context,
                       MaterialPageRoute(
                         builder: (context) => CommentsScreen(
-                          postId: post['id'],
-                          username: post['username'],
+                          postId: post['id'] as int,
+                          username: post['username'] as String,
                         ),
                       ),
                     );
