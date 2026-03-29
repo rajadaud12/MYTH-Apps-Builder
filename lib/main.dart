@@ -19,7 +19,6 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primaryColor: AppColors.primary,
         scaffoldBackgroundColor: AppColors.background,
-        fontFamily: 'Roboto',
         useMaterial3: true,
       ),
       home: const MainNavigation(),
