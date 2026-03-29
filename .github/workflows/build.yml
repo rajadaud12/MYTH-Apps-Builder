@@ -59,11 +59,12 @@ jobs:
           cp -r lib .backup/ || true
           cp pubspec.yaml .backup/ || true
           
-          # Web preview: need web + android. APK-only: android only — skip web build & Pages deploy entirely.
+          # Preview (web): scaffold web only — no Android project or APK work on chat/dashboard builds.
+          # Download page dispatches build_type=apk → android only + flutter build apk.
           if [ "$TARGET" == "apk" ]; then
             flutter create . --platforms=android --project-name=app --overwrite
           else
-            flutter create . --platforms=web,android --project-name=app --overwrite
+            flutter create . --platforms=web --project-name=app --overwrite
           fi
           
           cp -r .backup/lib . || true
