@@ -152,7 +152,7 @@ class _CommentsScreenState extends State<CommentsScreen> {
                     children: [
                       CircleAvatar(
                         radius: 22,
-                        backgroundImage: NetworkImage(comment['avatar']),
+                        backgroundImage: NetworkImage(comment['avatar'] as String),
                         backgroundColor: AppColors.divider,
                       ),
                       const SizedBox(width: 12),
@@ -179,7 +179,7 @@ class _CommentsScreenState extends State<CommentsScreen> {
                                   Row(
                                     children: [
                                       Text(
-                                        comment['name'],
+                                        comment['name'] as String,
                                         style: TextStyle(
                                           fontSize: 14,
                                           fontWeight: FontWeight.w600,
@@ -196,7 +196,7 @@ class _CommentsScreenState extends State<CommentsScreen> {
                                       ),
                                       const Spacer(),
                                       Text(
-                                        comment['time'],
+                                        comment['time'] as String,
                                         style: TextStyle(
                                           fontSize: 12,
                                           color: AppColors.textTertiary,
@@ -206,7 +206,7 @@ class _CommentsScreenState extends State<CommentsScreen> {
                                   ),
                                   const SizedBox(height: 6),
                                   Text(
-                                    comment['comment'],
+                                    comment['comment'] as String,
                                     style: TextStyle(
                                       fontSize: 14,
                                       color: AppColors.textPrimary,
