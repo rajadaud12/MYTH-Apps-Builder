@@ -93,7 +93,7 @@ class _UserProfileScreenState extends State<UserProfileScreen> with SingleTicker
                 icon: Container(
                   padding: const EdgeInsets.all(8),
                   decoration: BoxDecoration(
-                    color: AppColors.black.withValues(alpha: 0.2),
+                    color: AppColors.black.withOpacity(0.2),
                     shape: BoxShape.circle,
                   ),
                   child: Icon(
@@ -232,7 +232,7 @@ class _UserProfileScreenState extends State<UserProfileScreen> with SingleTicker
               const SizedBox(width: 12),
               Container(
                 decoration: BoxDecoration(
-                  color: AppColors.primary.withValues(alpha: 0.1),
+                  color: AppColors.primary.withOpacity(0.1),
                   borderRadius: BorderRadius.circular(25),
                 ),
                 child: IconButton(
