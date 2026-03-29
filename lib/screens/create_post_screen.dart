@@ -128,7 +128,7 @@ class _CreatePostScreenState extends State<CreatePostScreen> {
                 borderRadius: BorderRadius.circular(16),
                 boxShadow: [
                   BoxShadow(
-                    color: AppColors.shadow.withValues(alpha: 0.05),
+                    color: AppColors.shadow.withOpacity(0.05),
                     blurRadius: 10,
                     offset: const Offset(0, 2),
                   ),
@@ -168,7 +168,7 @@ class _CreatePostScreenState extends State<CreatePostScreen> {
                   Container(
                     padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
                     decoration: BoxDecoration(
-                      color: AppColors.primary.withValues(alpha: 0.1),
+                      color: AppColors.primary.withOpacity(0.1),
                       borderRadius: BorderRadius.circular(20),
                     ),
                     child: Row(
@@ -201,7 +201,7 @@ class _CreatePostScreenState extends State<CreatePostScreen> {
                 borderRadius: BorderRadius.circular(16),
                 boxShadow: [
                   BoxShadow(
-                    color: AppColors.shadow.withValues(alpha: 0.05),
+                    color: AppColors.shadow.withOpacity(0.05),
                     blurRadius: 10,
                     offset: const Offset(0, 2),
                   ),
@@ -246,7 +246,7 @@ class _CreatePostScreenState extends State<CreatePostScreen> {
                 borderRadius: BorderRadius.circular(16),
                 boxShadow: [
                   BoxShadow(
-                    color: AppColors.shadow.withValues(alpha: 0.05),
+                    color: AppColors.shadow.withOpacity(0.05),
                     blurRadius: 10,
                     offset: const Offset(0, 2),
                   ),
@@ -306,7 +306,7 @@ class _CreatePostScreenState extends State<CreatePostScreen> {
                             child: Container(
                               padding: const EdgeInsets.all(6),
                               decoration: BoxDecoration(
-                                color: AppColors.black.withValues(alpha: 0.6),
+                                color: AppColors.black.withOpacity(0.6),
                                 shape: BoxShape.circle,
                               ),
                               child: Icon(
@@ -341,7 +341,7 @@ class _CreatePostScreenState extends State<CreatePostScreen> {
         child: Container(
           padding: const EdgeInsets.symmetric(vertical: 12),
           decoration: BoxDecoration(
-            color: color.withValues(alpha: 0.1),
+            color: color.withOpacity(0.1),
             borderRadius: BorderRadius.circular(12),
           ),
           child: Column(
