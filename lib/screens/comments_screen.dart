@@ -167,7 +167,7 @@ class _CommentsScreenState extends State<CommentsScreen> {
                                 borderRadius: BorderRadius.circular(16),
                                 boxShadow: [
                                   BoxShadow(
-                                    color: AppColors.shadow.withValues(alpha: 0.05),
+                                    color: AppColors.shadow.withOpacity(0.05),
                                     blurRadius: 5,
                                     offset: const Offset(0, 1),
                                   ),
