@@ -232,7 +232,7 @@ class _ProfileScreenState extends State<ProfileScreen> with SingleTickerProvider
               const SizedBox(width: 12),
               Container(
                 decoration: BoxDecoration(
-                  color: AppColors.primary.withValues(alpha: 0.1),
+                  color: AppColors.primary.withOpacity(0.1),
                   borderRadius: BorderRadius.circular(25),
                 ),
                 child: IconButton(
@@ -310,7 +310,7 @@ class _ProfileScreenState extends State<ProfileScreen> with SingleTickerProvider
                   child: Container(
                     padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
                     decoration: BoxDecoration(
-                      color: AppColors.black.withValues(alpha: 0.6),
+                      color: AppColors.black.withOpacity(0.6),
                       borderRadius: BorderRadius.circular(12),
                     ),
                     child: Row(
@@ -364,7 +364,7 @@ class _ProfileScreenState extends State<ProfileScreen> with SingleTickerProvider
               child: Container(
                 padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
                 decoration: BoxDecoration(
-                  color: AppColors.black.withValues(alpha: 0.6),
+                  color: AppColors.black.withOpacity(0.6),
                   borderRadius: BorderRadius.circular(12),
                 ),
                 child: Icon(
