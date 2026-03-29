@@ -141,7 +141,7 @@ class _LoginScreenState extends State<LoginScreen> with SingleTickerProviderStat
               ),
             ],
           ),
-          child: const Icon(
+          child: Icon(
             Icons.lock_outline_rounded,
             color: Colors.white,
             size: 48,
@@ -296,7 +296,7 @@ class _LoginScreenState extends State<LoginScreen> with SingleTickerProviderStat
                   ),
                 ),
                 child: rememberMe
-                    ? const Icon(
+                    ? Icon(
                         Icons.check,
                         size: 16,
                         color: Colors.white,
@@ -369,7 +369,7 @@ class _LoginScreenState extends State<LoginScreen> with SingleTickerProviderStat
           ),
         ),
         child: isLoading
-            ? const SizedBox(
+            ? SizedBox(
                 width: 28,
                 height: 28,
                 child: CircularProgressIndicator(
@@ -396,7 +396,7 @@ class _LoginScreenState extends State<LoginScreen> with SingleTickerProviderStat
                       color: Colors.white.withOpacity(0.2),
                       borderRadius: BorderRadius.circular(10),
                     ),
-                    child: const Icon(
+                    child: Icon(
                       Icons.arrow_forward_rounded,
                       color: Colors.white,
                       size: 20,
@@ -433,24 +433,27 @@ class _LoginScreenState extends State<LoginScreen> with SingleTickerProviderStat
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         _buildSocialButton(
-          icon: NetworkImage('https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg'),
+          icon: Icons.g_mobiledata,
           label: 'Google',
+          color: Color(0xFFDB4437),
         ),
         const SizedBox(width: 16),
         _buildSocialButton(
-          icon: NetworkImage('https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apple/apple-original.svg'),
+          icon: Icons.apple,
           label: 'Apple',
+          color: Color(0xFF000000),
         ),
         const SizedBox(width: 16),
         _buildSocialButton(
-          icon: NetworkImage('https://cdn.jsdelivr.net/gh/devicons/devicon/icons/facebook/facebook-original.svg'),
+          icon: Icons.facebook,
           label: 'Facebook',
+          color: Color(0xFF4267B2),
         ),
       ],
     );
   }
 
-  Widget _buildSocialButton({required NetworkImage icon, required String label}) {
+  Widget _buildSocialButton({required IconData icon, required String label, required Color color}) {
     return Expanded(
       child: Container(
         height: 58,
@@ -474,17 +477,10 @@ class _LoginScreenState extends State<LoginScreen> with SingleTickerProviderStat
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Image(
-                  image: icon,
-                  width: 24,
-                  height: 24,
-                  errorBuilder: (context, error, stackTrace) {
-                    return Icon(
-                      Icons.public,
-                      color: AppColors.textSecondary,
-                      size: 24,
-                    );
-                  },
+                Icon(
+                  icon,
+                  color: color,
+                  size: 28,
                 ),
               ],
             ),
