@@ -283,7 +283,7 @@ class _CommentsScreenState extends State<CommentsScreen> {
               color: AppColors.cardBackground,
               boxShadow: [
                 BoxShadow(
-                  color: AppColors.shadow.withValues(alpha: 0.1),
+                  color: AppColors.shadow.withOpacity(0.1),
                   blurRadius: 10,
                   offset: const Offset(0, -2),
                 ),
