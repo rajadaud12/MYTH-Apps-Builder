@@ -73,15 +73,25 @@ jobs:
           # GitHub Pages: avoid 404 on deep links / refresh (Flutter web router)
           cp build/web/index.html build/web/404.html
 
+      # JamesIves skips any path matched by the repo .gitignore; Flutter templates ignore /build/,
+      # so deploying build/web directly often uploads NOTHING → 404. Copy to an unignored folder first.
+      - name: Stage site for Pages deploy
+        run: |
+          rm -rf myth-pages-bundle
+          mkdir -p myth-pages-bundle
+          cp -a build/web/. myth-pages-bundle/
+          touch myth-pages-bundle/.nojekyll
+          rm -f myth-pages-bundle/.gitignore
+
       - name: Deploy Preview 🚀
         if: success()
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          folder: build/web
+          folder: myth-pages-bundle
           branch: gh-pages
           target-folder: previews/${{ github.ref_name }}
-          clean: false # Important: Previews must coexist
-          single-commit: true
+          clean: false
+          force: false
           
       - name: Ensure Root Index (Pages Activation)
         if: success()
