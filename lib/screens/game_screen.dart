@@ -116,7 +116,7 @@ class _GameScreenState extends State<GameScreen> {
         borderRadius: BorderRadius.circular(20),
         boxShadow: [
           BoxShadow(
-            color: AppColors.primary.withValues(alpha: 0.1),
+            color: AppColors.primary.withOpacity(0.1),
             blurRadius: 20,
             offset: const Offset(0, 8),
           ),
@@ -169,7 +169,7 @@ class _GameScreenState extends State<GameScreen> {
         borderRadius: BorderRadius.circular(24),
         boxShadow: [
           BoxShadow(
-            color: AppColors.primary.withValues(alpha: 0.15),
+            color: AppColors.primary.withOpacity(0.15),
             blurRadius: 30,
             offset: const Offset(0, 10),
           ),
@@ -200,7 +200,7 @@ class _GameScreenState extends State<GameScreen> {
         duration: const Duration(milliseconds: 300),
         decoration: BoxDecoration(
           color: isWinningCell 
-              ? AppColors.winHighlight.withValues(alpha: 0.2)
+              ? AppColors.winHighlight.withOpacity(0.2)
               : AppColors.background,
           borderRadius: BorderRadius.circular(16),
           border: Border.all(
@@ -258,7 +258,7 @@ class _GameScreenState extends State<GameScreen> {
           borderRadius: BorderRadius.circular(30),
         ),
         elevation: 8,
-        shadowColor: AppColors.primary.withValues(alpha: 0.4),
+        shadowColor: AppColors.primary.withOpacity(0.4),
       ),
       child: const Row(
         mainAxisSize: MainAxisSize.min,
