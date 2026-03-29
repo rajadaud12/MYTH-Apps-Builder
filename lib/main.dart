@@ -54,7 +54,7 @@ class _MainNavigationState extends State<MainNavigation> {
           color: AppColors.cardBackground,
           boxShadow: [
             BoxShadow(
-              color: AppColors.shadow.withValues(alpha: 0.1),
+              color: AppColors.shadow.withOpacity(0.1),
               blurRadius: 20,
               offset: const Offset(0, -5),
             ),
