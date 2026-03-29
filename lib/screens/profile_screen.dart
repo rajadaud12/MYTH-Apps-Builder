@@ -291,7 +291,7 @@ class _ProfileScreenState extends State<ProfileScreen> with SingleTickerProvider
             children: [
               if (post['image'] != null)
                 Image.network(
-                  post['image'],
+                  post['image'] as String,
                   fit: BoxFit.cover,
                 )
               else
