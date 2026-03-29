@@ -100,5 +100,19 @@ jobs:
           folder: build/web
           branch: gh-pages
           target-folder: previews/${{ github.ref_name }}
-          clean: false # Do not delete other project folders
+          clean: false # Important: Previews must coexist
           single-commit: true
+          
+      - name: Ensure Root Index (Pages Activation)
+        if: github.event.inputs.build_type == 'web' || github.event_name == 'push'
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git clone --depth 1 --branch gh-pages https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git gh-pages-root
+          cd gh-pages-root
+          if [ ! -f "index.html" ]; then
+            echo "<html><body>MYTH Build System Active</body></html>" > index.html
+            git add index.html
+            git commit -m "Initialize Pages Root"
+            git push origin gh-pages
+          fi
