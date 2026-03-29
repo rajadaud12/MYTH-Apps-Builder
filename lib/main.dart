@@ -20,7 +20,6 @@ class SimpleTodoApp extends StatelessWidget {
           primary: AppColors.primary,
           secondary: AppColors.secondary,
           surface: AppColors.surface,
-          background: AppColors.background,
         ),
         scaffoldBackgroundColor: AppColors.background,
         useMaterial3: true,
