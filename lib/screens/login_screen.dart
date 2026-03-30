@@ -307,12 +307,17 @@ class _LoginScreenState extends State<LoginScreen> {
                         fontSize: 15,
                       ),
                     ),
-                    Text(
-                      'Sign Up',
-                      style: TextStyle(
-                        color: AppColors.primary,
-                        fontSize: 15,
-                        fontWeight: FontWeight.bold,
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.pushNamed(context, '/signup');
+                      },
+                      child: Text(
+                        'Sign Up',
+                        style: TextStyle(
+                          color: AppColors.primary,
+                          fontSize: 15,
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
                     ),
                   ],
