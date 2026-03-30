@@ -206,39 +206,35 @@ class _LoginScreenState extends State<LoginScreen> {
                   ],
                 ),
                 SizedBox(height: 32),
-                Container(
-                  width: double.infinity,
-                  height: 56,
-                  decoration: BoxDecoration(
-                    gradient: LinearGradient(
-                      colors: [AppColors.gradientStart, AppColors.gradientEnd],
-                      begin: Alignment.centerLeft,
-                      end: Alignment.centerRight,
-                    ),
-                    borderRadius: BorderRadius.circular(16),
-                    boxShadow: [
-                      BoxShadow(
-                        color: AppColors.primary.withOpacity(0.4),
-                        blurRadius: 15,
-                        offset: Offset(0, 8),
+                GestureDetector(
+                  onTap: () {
+                    Navigator.pushNamed(context, '/home');
+                  },
+                  child: Container(
+                    width: double.infinity,
+                    height: 56,
+                    decoration: BoxDecoration(
+                      gradient: LinearGradient(
+                        colors: [AppColors.gradientStart, AppColors.gradientEnd],
+                        begin: Alignment.centerLeft,
+                        end: Alignment.centerRight,
                       ),
-                    ],
-                  ),
-                  child: Material(
-                    color: Colors.transparent,
-                    child: InkWell(
-                      onTap: () {
-                        print('Login pressed');
-                      },
                       borderRadius: BorderRadius.circular(16),
-                      child: Center(
-                        child: Text(
-                          'Sign In',
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 18,
-                            fontWeight: FontWeight.bold,
-                          ),
+                      boxShadow: [
+                        BoxShadow(
+                          color: AppColors.primary.withOpacity(0.4),
+                          blurRadius: 15,
+                          offset: Offset(0, 8),
+                        ),
+                      ],
+                    ),
+                    child: Center(
+                      child: Text(
+                        'Sign In',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
                         ),
                       ),
                     ),
