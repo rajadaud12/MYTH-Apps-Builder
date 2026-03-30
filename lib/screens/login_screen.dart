@@ -276,21 +276,24 @@ class _LoginScreenState extends State<LoginScreen> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     _buildSocialButton(
-                      icon: 'https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg',
+                      iconData: Icons.g_mobiledata,
+                      label: 'G',
                       onTap: () {
                         print('Google login');
                       },
                     ),
                     SizedBox(width: 16),
                     _buildSocialButton(
-                      icon: 'https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg',
+                      iconData: Icons.facebook,
+                      label: 'f',
                       onTap: () {
                         print('Facebook login');
                       },
                     ),
                     SizedBox(width: 16),
                     _buildSocialButton(
-                      icon: 'https://developer.apple.com/assets/elements/icons/apple-logo/apple-logo-outline.png',
+                      iconData: Icons.apple,
+                      label: '',
                       onTap: () {
                         print('Apple login');
                       },
@@ -328,7 +331,8 @@ class _LoginScreenState extends State<LoginScreen> {
   }
 
   Widget _buildSocialButton({
-    required String icon,
+    required IconData iconData,
+    required String label,
     required VoidCallback onTap,
   }) {
     return GestureDetector(
@@ -348,17 +352,10 @@ class _LoginScreenState extends State<LoginScreen> {
           ],
         ),
         child: Center(
-          child: Image.network(
-            icon,
-            width: 28,
-            height: 28,
-            errorBuilder: (context, error, stackTrace) {
-              return Icon(
-                Icons.social_distance,
-                color: AppColors.textSecondary,
-                size: 28,
-              );
-            },
+          child: Icon(
+            iconData,
+            size: 32,
+            color: AppColors.textSecondary,
           ),
         ),
       ),
