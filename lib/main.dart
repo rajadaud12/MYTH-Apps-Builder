@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_basic_login_app/utils/colors.dart'; 
 import 'package:flutter_basic_login_app/screens/login_screen.dart'; 
+import 'package:flutter_basic_login_app/screens/signup_screen.dart'; 
 import 'package:flutter_basic_login_app/screens/home_screen.dart'; 
 import 'package:flutter_basic_login_app/screens/todo_screen.dart'; 
 import 'package:flutter_basic_login_app/screens/add_todo_screen.dart'; 
@@ -22,6 +23,7 @@ class MyApp extends StatelessWidget {
       ),
       home: LoginScreen(),
       routes: {
+        '/signup': (context) => SignUpScreen(),
         '/home': (context) => HomeScreen(),
         '/todo': (context) => TodoScreen(),
         '/add-todo': (context) => AddTodoScreen(),
