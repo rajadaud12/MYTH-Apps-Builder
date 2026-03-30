@@ -7,6 +7,14 @@ on:
         description: 'Build target (web or apk)'
         required: true
         default: 'web'
+      project_name:
+        description: 'Flutter project name (snake_case)'
+        required: false
+        default: 'app'
+      package_id:
+        description: 'Unique package identifier for Android (e.g. project_abc123)'
+        required: false
+        default: 'app'
 
 # Sequential deployment to gh-pages prevents Git lock errors (cannot lock ref)
 concurrency:
@@ -47,14 +55,18 @@ jobs:
 
       - uses: subosito/flutter-action@v2
         with:
-          flutter-version: "3.24.0"
+          flutter-version: "3.27.4"
           channel: "stable"
           cache: true
 
       - name: Initialize Project
         run: |
           TARGET="${{ github.event.inputs.build_type }}"
+          PROJECT_NAME="${{ github.event.inputs.project_name }}"
+          PACKAGE_ID="${{ github.event.inputs.package_id }}"
           if [ -z "$TARGET" ]; then TARGET="web"; fi
+          if [ -z "$PROJECT_NAME" ]; then PROJECT_NAME="app"; fi
+          if [ -z "$PACKAGE_ID" ]; then PACKAGE_ID="app"; fi
           mkdir -p .backup
           cp -r lib .backup/ || true
           cp pubspec.yaml .backup/ || true
@@ -62,7 +74,7 @@ jobs:
           # Preview (web): scaffold web only — no Android project or APK work on chat/dashboard builds.
           # Download page dispatches build_type=apk → android only + flutter build apk.
           if [ "$TARGET" == "apk" ]; then
-            flutter create . --platforms=android --project-name=app --overwrite
+            flutter create . --platforms=android --project-name="$PROJECT_NAME" --org=com.myth --overwrite
           else
             flutter create . --platforms=web --project-name=app --overwrite
           fi
