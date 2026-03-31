@@ -30,7 +30,7 @@ class HomeScreen extends StatelessWidget {
                     style: TextStyle(color: AppColors.secondary),
                   ),
                   TextSpan(
-                    text: 'Visionary',
+                    text: 'Shahab',
                     style: TextStyle(color: AppColors.primary),
                   ),
                 ],
