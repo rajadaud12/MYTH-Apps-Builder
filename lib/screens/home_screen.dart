@@ -616,7 +616,7 @@ class _HomeScreenState extends State<HomeScreen> {
         children: [
           _buildNavItem(Icons.home_filled, 'Home', true),
           _buildNavItem(Icons.search, 'Explore', false),
-          _buildNavItem(Iconsshopping_cart_outlined, 'Cart', false),
+          _buildNavItem(Icons.shopping_cart_outlined, 'Cart', false),
           _buildNavItem(Icons.favorite_outline, 'Favorites', false),
           _buildNavItem(Icons.person_outline, 'Profile', false),
         ],
