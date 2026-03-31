@@ -30,7 +30,7 @@ class HomeScreen extends StatelessWidget {
               ),
               SizedBox(height: 16),
               Text(
-                'Just tell MYTH what you imagine — we'll take it from there.',
+                'Just tell MYTH what you imagine — we\'ll take it from there.',
                 style: GoogleFonts.poppins(
                   fontSize: 16,
                   color: Colors.grey,
@@ -56,10 +56,21 @@ class HomeScreen extends StatelessWidget {
                         ),
                       ),
                     ),
-                    DropdownButton<String>(
-                      value: 'MYTH v1.0 - Core',
-                      items: <DropdownMenuItem<String>>[
-                        new DropdownMenuItem<String>(
+                    PopupMenuButton<String>(
+                      initialValue: 'MYTH v1.0 - Core',
+                      onSelected: (String value) {},
+                      child: Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Text(
+                            'MYTH v1.0 - Core',
+                            style: TextStyle(color: AppColors.accent),
+                          ),
+                          Icon(Icons.arrow_drop_down, color: AppColors.accent),
+                        ],
+                      ),
+                      itemBuilder: (context) => [
+                        PopupMenuItem<String>(
                           value: 'MYTH v1.0 - Core',
                           child: Text(
                             'MYTH v1.0 - Core',
@@ -67,9 +78,6 @@ class HomeScreen extends StatelessWidget {
                           ),
                         ),
                       ],
-                      onChanged: (String newValue) {},
-                      underline: Container(),
-                      style: TextStyle(color: AppColors.accent),
                     ),
                     IconButton(
                       icon: Icon(Icons.send, color: AppColors.accent),
@@ -99,17 +107,21 @@ class HomeScreen extends StatelessWidget {
   }
 
   Widget _buildExampleButton(String text) {
-    return Container(
-      padding: EdgeInsets.symmetric(horizontal: 12, vertical: 8),
-      decoration: BoxDecoration(
-        color: AppColors.buttonBackground,
+    return Material(
+      color: AppColors.buttonBackground,
+      borderRadius: BorderRadius.circular(8),
+      child: InkWell(
+        onTap: () {},
         borderRadius: BorderRadius.circular(8),
-      ),
-      child: Text(
-        text,
-        style: GoogleFonts.poppins(
-          fontSize: 12,
-          color: Colors.grey,
+        child: Padding(
+          padding: EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+          child: Text(
+            text,
+            style: GoogleFonts.poppins(
+              fontSize: 12,
+              color: Colors.grey,
+            ),
+          ),
         ),
       ),
     );
