@@ -21,7 +21,7 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.all(24.0),
+          padding: EdgeInsets.all(24.0),
           child: Column(
             children: [
               SizedBox(height: 40),
@@ -57,7 +57,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 padding: EdgeInsets.symmetric(horizontal: 16),
                 decoration: BoxDecoration(
                   color: AppColors.surface,
-                  border: Border.all(color: AppColors.textSecondary.withOpacity(0.3)),
+                  border: Border.all(color: AppColors.textSecondary),
                   borderRadius: BorderRadius.circular(12),
                 ),
                 child: Row(
@@ -77,7 +77,6 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                     GestureDetector(
                       onTap: () {
-                        // Handle model selection
                       },
                       child: Row(
                         children: [
@@ -96,7 +95,6 @@ class _HomeScreenState extends State<HomeScreen> {
                     GestureDetector(
                       onTap: () {
                         if (_controller.text.isNotEmpty) {
-                          // Handle send action
                         }
                       },
                       child: Icon(Icons.send, color: AppColors.primary),
@@ -123,7 +121,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       child: Container(
                         padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
                         decoration: BoxDecoration(
-                          border: Border.all(color: AppColors.textSecondary.withOpacity(0.3)),
+                          border: Border.all(color: AppColors.textSecondary),
                           borderRadius: BorderRadius.circular(20),
                         ),
                         child: Text(
