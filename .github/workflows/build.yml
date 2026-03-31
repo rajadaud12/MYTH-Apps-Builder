@@ -85,6 +85,13 @@ jobs:
           mkdir -p assets images fonts
           flutter pub get
 
+      - name: Gradle Kotlin JVM validation (APK)
+        if: github.event.inputs.build_type == 'apk'
+        run: |
+          if [ -f android/gradle.properties ]; then
+            grep -q '^kotlin.jvm.target.validation.mode=' android/gradle.properties || echo 'kotlin.jvm.target.validation.mode=warning' >> android/gradle.properties
+          fi
+
       - name: Build Web (preview for GitHub Pages)
         if: github.event.inputs.build_type == 'web'
         run: |
