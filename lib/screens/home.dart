@@ -35,7 +35,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 textAlign: TextAlign.center,
               ),
               Text(
-                'Shahab Hassan',
+                'Shahab Hassan Riaz',
                 style: GoogleFonts.poppins(
                   fontSize: 32,
                   fontWeight: FontWeight.bold,
